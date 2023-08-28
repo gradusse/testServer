@@ -11,7 +11,7 @@ const server = http.createServer((req, res) => {
   const data = fs.readFileSync('src/object.json', 'utf8');
   console.log(data);
 
-  res.end('Hello World');
+  res.end(data);
 });
 
 server.listen(port, hostname, () => {
