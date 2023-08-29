@@ -1,15 +1,15 @@
 const express = require('express');
 const app = express();
-const fs = require('fs');
+
 
 const hostname = '127.0.0.1';
 const port = 3000;
 // комментарий
-app.get("/", function (require, response) {
-  response.statusCode = 200;
-  response.set('Content-Type', 'application/json');
-
-  response.send({
+app.get("/", function (req, res) {
+  req.header('Content-Type');
+  res.statusCode = 200;
+  res.set('Content-type', 'application/json');
+  res.send({
     firstName: "Иван",
     lastName: "Иванов",
     address: {
