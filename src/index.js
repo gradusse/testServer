@@ -5,12 +5,23 @@ const fs = require('fs');
 const hostname = '127.0.0.1';
 const port = 3000;
 // комментарий
-app.get("/", function(require, response){
+app.get("/", function (require, response) {
   response.statusCode = 200;
-  response.setHeader('Content-Type', 'application/json');
-  const data = fs.readFileSync('src/object.json', 'utf8');
+  response.set('Content-Type', 'application/json');
 
-  response.end(data);
+  response.send({
+    firstName: "Иван",
+    lastName: "Иванов",
+    address: {
+      streetAddress: "Московское ш., 101, кв.101",
+      city: "Ленинград",
+      postalCode: 101101
+    },
+    phoneNumbers: [
+      "812 123-1234",
+      "916 123-4567"
+    ]
+  });
 });
 
 app.listen(port, hostname, () => {
