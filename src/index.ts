@@ -1,5 +1,5 @@
-import express, { Express, Request, Response } from 'express';
-//const express = require('express');
+import express, { Request, Response } from 'express';
+
 const app = express();
 
 const hostname = '127.0.0.1';
