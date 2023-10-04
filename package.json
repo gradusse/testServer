@@ -1,8 +1,7 @@
 {
   "private": "true",
   "scripts": {
-    "dev": "dotenv -- ts-node-dev ./src/index.ts",
-    "start": "node ./src/index.ts"
+    "dev": "dotenv -- ts-node-dev ./src/index.ts"
   },
   "dependencies": {
     "express": "^4.18.2",

@@ -1,6 +1,7 @@
 import express, { Request, Response } from 'express';
 import { Client } from 'pg';
 
+console.log(process.env.DATABASE_URL)
 const main = async () => {
   const client = new Client(process.env.DATABASE_URL)
   await client.connect().catch((err) => {
@@ -8,11 +9,11 @@ const main = async () => {
   });
 
 
-  client.query('select * from "User" u', (err, res) => {
-    if (err) throw err;
-    console.log(res.rows);
-    //client.end();
-  });
+  // client.query('select * from posts', (err, res) => {
+  //   if (err) throw err;
+  //   console.log(res.rows);
+  //   //client.end();
+  // });
 
 
 
